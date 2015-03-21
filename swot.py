@@ -202,7 +202,6 @@ class Swot(object):
     def __is_academic_domain(cls, domain):
         path = join(dirname(__file__), 'data/lib/domains', join(*reversed(domain.registered_domain.split('.'))))
         domain_file = '{}.txt'.format(path)
-        print domain_file
         return exists(domain_file)
 
 
