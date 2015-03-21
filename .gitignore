@@ -1,0 +1,7 @@
+venv/*
+*.pyc
+.idea
+.eggs
+build
+dist
+swot_python.egg-info
