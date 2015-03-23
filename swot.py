@@ -1,6 +1,8 @@
+import sys
 import re
 import tldextract
 from os.path import join, dirname, exists
+
 
 BLACKLIST = frozenset([
     'si.edu',
@@ -200,12 +202,21 @@ class Swot(object):
 
     @classmethod
     def __is_academic_domain(cls, domain):
-        path = join(dirname(__file__), 'data/lib/domains', join(*reversed(domain.registered_domain.split('.'))))
-        domain_file = '{}.txt'.format(path)
-        return exists(domain_file)
+        path = '{}.txt'.format(
+            join(
+                'data/lib/domains',
+                join(*reversed(domain.registered_domain.split('.')))
+            )
+        )
+
+        if exists(join(dirname(__file__), path)):
+            return True
+
+        if exists(join(sys.prefix, 'swot_data', path)):
+            return True
+
+        return False
 
 
 if __name__ == '__main__':
-    import sys
-
     print Swot.is_academic(sys.argv[1])

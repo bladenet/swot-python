@@ -5,7 +5,7 @@ from setuptools import setup
 
 data_files = []
 for root, dirs, files in os.walk('data/lib/domains'):
-    data_files.append((root, [os.path.join(root, f) for f in files]))
+    data_files.append((os.path.join('swot_data', root), [os.path.join(root, f) for f in files]))
 
 setup(
     name='swot-python',
