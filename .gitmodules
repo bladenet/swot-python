@@ -1,4 +1,4 @@
 [submodule "data"]
 	path = data
 	url = git@github.com:leereilly/swot.git
-	branch = data-only
+	branch = master
