@@ -6,6 +6,7 @@ import unittest
 
 from swot import Swot
 
+
 class TestSwot(unittest.TestCase):
     def test_swot(self):
         assert Swot.is_academic('lreilly@stanford.edu')
@@ -57,5 +58,4 @@ class TestSwot(unittest.TestCase):
 
 
 if __name__ == '__main__':
-
     unittest.main()

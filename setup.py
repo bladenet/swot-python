@@ -20,7 +20,7 @@ setup(
     url='http://github.com/bladenet/swot-python',
     data_files=data_files,
     py_modules=['swot'],
-    install_requires=['tldextract==1.5.1'],
+    install_requires=['tldextract==1.5.1', 'six'],
     test_suite='nose.collector',
     tests_require=['tldextract==1.5.1', 'nose'],
 )
