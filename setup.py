@@ -23,4 +23,16 @@ setup(
     install_requires=['tldextract==1.5.1', 'six'],
     test_suite='nose.collector',
     tests_require=['tldextract==1.5.1', 'nose'],
+    classifiers=[
+        'Intended Audience :: Developers',
+        'Operating System :: OS Independent',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.6',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.2',
+        'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: 3.4',
+    ],
 )
