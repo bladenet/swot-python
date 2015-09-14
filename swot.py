@@ -2,6 +2,7 @@ import sys
 import re
 import tldextract
 from os.path import join, dirname, exists
+import six
 
 
 BLACKLIST = frozenset([
@@ -181,7 +182,7 @@ ACADEMIC_TLDS = frozenset([
 class Swot(object):
     @classmethod
     def is_academic(cls, domain_str):
-        if not domain_str or not isinstance(domain_str, (str, unicode)):
+        if not domain_str or not isinstance(domain_str, six.string_types):
             return False
 
         domain_str = domain_str.strip().lower()
@@ -189,7 +190,7 @@ class Swot(object):
         if not domain.registered_domain:
             return False
 
-        if [b for b in BLACKLIST if re.search(r'(\A|\.){}'.format(re.escape(b)), domain_str)]:
+        if [b for b in BLACKLIST if re.search(r'(\A|\.){0}'.format(re.escape(b)), domain_str)]:
             return False
 
         if domain.tld in ACADEMIC_TLDS:
@@ -202,7 +203,7 @@ class Swot(object):
 
     @classmethod
     def __is_academic_domain(cls, domain):
-        path = '{}.txt'.format(
+        path = '{0}.txt'.format(
             join(
                 'data/lib/domains',
                 join(*reversed(domain.registered_domain.split('.')))
@@ -219,4 +220,4 @@ class Swot(object):
 
 
 if __name__ == '__main__':
-    print Swot.is_academic(sys.argv[1])
+    print(Swot.is_academic(sys.argv[1]))

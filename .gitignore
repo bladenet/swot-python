@@ -2,6 +2,7 @@ venv/*
 *.pyc
 .idea
 .eggs
+.tox/
 build
 dist
 swot_python.egg-info
