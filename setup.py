@@ -9,7 +9,7 @@ for root, dirs, files in os.walk('data/lib/domains'):
 
 setup(
     name='swot-python',
-    version='1.0.0',
+    version='1.1.0',
     description=('Swot is a community-driven or crowdsourced library for '
                  'verifying that domain names and email addresses are tied '
                  'to a legitimate university of college'),
